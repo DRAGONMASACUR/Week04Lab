@@ -46,16 +46,12 @@ public class NoteServlet extends HttpServlet {
                 }
                 i++;
             }
+            br.close();
         }
+        
         note.setTitle(title);
         note.setContents(contents);
         request.setAttribute("note", note);
-        String scheme = request.getScheme();
-        String serverName = request.getServerName();
-        int portNumber = request.getServerPort();
-        String contextPath = request.getContextPath();
-        String servletPath = request.getServletPath();
-        String pathInfo = request.getPathInfo();
         String query = request.getQueryString();
 
         if (query != null){
@@ -80,11 +76,12 @@ public class NoteServlet extends HttpServlet {
 
         try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path, false)))) {
             pw.println(title + "\n" + contents);
+            pw.close();
         }
 
-        
-        //request.setAttribute("note", note);
-
-        //getServletContext().getRequestDispatcher("/WEB-INF/editnote.jsp").forward(request, response);
+        note.setTitle(title);
+        note.setContents(contents);
+        request.setAttribute("note", note);
+        getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp").forward(request, response);
     }
 }
