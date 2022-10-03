@@ -13,8 +13,10 @@
     </head>
     <body>
         <h1>Edit Note</h1>
-        Title: <input type="text" name="title" value="${title}"><br>
-        Contents: <input type="text" name="contents" value="${contents}">
-        <input type="submit" value="Save">
+        <form method="post" action="NoteServlet">
+            Title: <input type="text" name="title" value="${note.title}"><br>
+            Contents: <input type="text" name="contents" value="${note.contents}"><br>
+            <input type="submit" value="Save">
+        </form>
     </body>
 </html>

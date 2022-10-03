@@ -14,9 +14,9 @@
     <body>
         <h1>View Note</h1>
         <p>
-            Title: {$title}<br>
-            Contents: {$contents}<br>
-            <a href="note?edit"> Edit</a>
+            Title: ${note.title}<br>
+            Contents: ${note.contents}<br>
+            <a href="NoteServlet?edit"> Edit</a>
         </p>
     </body>
 </html>
