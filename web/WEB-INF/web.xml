@@ -16,8 +16,8 @@
         <session-timeout>
             30
         </session-timeout>
-        <welcome-file-list>
+    </session-config>
+    <welcome-file-list>
         <welcome-file>NoteServlet</welcome-file>
     </welcome-file-list>
-    </session-config>
 </web-app>
